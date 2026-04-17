@@ -277,6 +277,10 @@ export default function Landing() {
                     </div>
                   ))}
                 </div>
+
+                <div className="mt-6 rounded-[1.4rem] border border-white/8 bg-white/5 px-4 py-4 text-sm text-[#efe7d3]/78">
+                  Escolha ideal para quem quer sair do improviso e construir clareza com método.
+                </div>
               </div>
             ))}
           </div>
@@ -292,8 +296,20 @@ export default function Landing() {
               <span className="block italic text-[#e6cf97]">muda de rota agora.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#d8cfbc]/80">
-              A única decisão que realmente trava a transformação é não decidir. A apresentação agora está estruturada para vender clareza, não só informação.
+              A única decisão que realmente trava a transformação é não decidir. Clareza, acompanhamento e direção já estão prontos. O próximo passo é seu.
             </p>
+
+            <div className="mx-auto mt-8 grid max-w-3xl gap-4 text-sm text-[#d8cfbc]/74 md:grid-cols-3">
+              {[
+                "Conteúdo com aplicação prática",
+                "Acompanhamento individual real",
+                "Oferta estruturada por 24 horas",
+              ].map((item) => (
+                <div key={item} className="rounded-2xl border border-white/8 bg-white/5 px-4 py-4 backdrop-blur-xl">
+                  {item}
+                </div>
+              ))}
+            </div>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a href={CTA_URL} target="_blank" rel="noreferrer" className="gold-button inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-[#162016]">
