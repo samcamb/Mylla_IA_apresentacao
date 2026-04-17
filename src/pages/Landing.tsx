@@ -94,7 +94,7 @@ export default function Landing() {
             </a>
           </div>
 
-          <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="max-w-3xl">
               <div className="mb-8 inline-flex rounded-full border border-[#c5a059]/20 bg-white/6 px-5 py-2 text-[11px] uppercase tracking-[0.28em] text-[#e5cb91] backdrop-blur-xl">
                 Mentoria FOCO no universo visual da Mylla
@@ -111,6 +111,18 @@ export default function Landing() {
                 Clareza, direção e estrutura para tirar mulheres do caos financeiro e levá-las para uma vida mais leve, organizada e próspera.
               </p>
 
+              <div className="mt-8 grid gap-3 text-sm text-[#d8cfbc]/78 sm:grid-cols-3">
+                {[
+                  "Organização sem planilhas impossíveis",
+                  "Aplicação prática com acompanhamento real",
+                  "Decisão financeira com leveza e direção",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/8 bg-white/5 px-4 py-4 backdrop-blur-xl sm:min-h-[88px]">
+                    {item}
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a href="#visao" className="gold-button inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-[#172017]">
                   Ver apresentação
@@ -123,7 +135,16 @@ export default function Landing() {
             </div>
 
             <div className="overflow-hidden rounded-[2.4rem] border border-white/10 bg-white/5 shadow-[0_35px_120px_rgba(0,0,0,0.45)] backdrop-blur-2xl">
-              <img src={myllaHeroReal} alt="Hero Mylla" className="h-[360px] w-full object-cover object-center sm:h-[460px] lg:h-[620px]" />
+              <div className="relative">
+                <img src={myllaHeroReal} alt="Hero Mylla" className="h-[360px] w-full object-cover object-center sm:h-[460px] lg:h-[620px]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,12,8,0.02)_0%,rgba(8,12,8,0.22)_100%)]" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-[1.6rem] border border-white/10 bg-[#111714]/72 p-4 backdrop-blur-xl md:bottom-8 md:left-8 md:right-8 md:p-6">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-[#e6cf97]">Apresentação premium</p>
+                  <p className="mt-2 max-w-md text-sm leading-6 text-[#efe7d3]/84 md:text-base">
+                    O conteúdo da Mentoria FOCO traduzido para um formato mais sofisticado, direto e coerente com o universo visual da Mylla IA.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -235,9 +256,9 @@ export default function Landing() {
             description="Reorganizei os planos como blocos premium, mais próximos da linguagem do site da Mylla e menos com cara de tabela crua."
           />
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3 lg:items-stretch">
             {planos.map((plano) => (
-              <div key={plano.nome} className={`rounded-[2rem] border p-7 backdrop-blur-2xl ${plano.destaque ? "border-[#c5a059]/30 bg-[linear-gradient(180deg,rgba(197,160,89,0.16),rgba(255,255,255,0.05))] shadow-[0_28px_80px_rgba(0,0,0,0.35)]" : "border-white/10 bg-white/6"}`}>
+              <div key={plano.nome} className={`rounded-[2rem] border p-7 backdrop-blur-2xl ${plano.destaque ? "border-[#c5a059]/30 bg-[linear-gradient(180deg,rgba(197,160,89,0.16),rgba(255,255,255,0.05))] shadow-[0_28px_80px_rgba(0,0,0,0.35)] lg:-translate-y-3" : "border-white/10 bg-white/6"}`}>
                 <div className="mb-6 flex items-center justify-between">
                   <h3 className="text-3xl text-[#f6f1e7]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{plano.nome}</h3>
                   {plano.destaque ? <span className="rounded-full bg-[#c5a059] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#172017]">Mais indicado</span> : null}
@@ -246,6 +267,7 @@ export default function Landing() {
                 <p className="text-5xl text-[#f8f3ea]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{plano.preco}</p>
                 <p className="mt-2 text-sm text-[#e6cf97]">{plano.diaria}</p>
                 <p className="mt-2 text-sm text-[#d5ccb9]/76">{plano.frase}</p>
+                <div className="mt-4 h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent" />
 
                 <div className="mt-6 space-y-3">
                   {plano.itens.map((item) => (
